@@ -1,0 +1,32 @@
+.nav {
+  min-height: 30px;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nav .logo {
+  flex: 1;
+  margin-left: 35px;
+}
+.nav .logo h1 {
+  color: rgb(93, 245, 93);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav .search {
+  flex: 1;
+  margin-left: 15px;
+
+  border: none;
+}
+.nav .search input {
+  background-color: rgba(81, 81, 81, 0.5);
+  padding: 10px;
+}
+.nav .search input:focus {
+  outline: none;
+  caret-color: rgb(179, 179, 179);
+}

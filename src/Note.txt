@@ -1,0 +1,14 @@
+# App
+## movie data
+
+## Home Page
+### Movie top rated etc
+#### single movie page
+#### banners 
+#### promotions
+
+## components
+### slider
+### movie section
+### banners
+### promotions
