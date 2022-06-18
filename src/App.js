@@ -7,6 +7,12 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route
+          path="*"
+          element={
+            <h1 style={{ color: '#fff' }}>Error Page - 404 Page not found!</h1>
+          }
+        />
       </Routes>
     </div>
   )
