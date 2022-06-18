@@ -1,6 +1,6 @@
 .movie-section {
   width: 92%;
-  margin: auto;
+  margin: 50px auto;
   height: 100%;
   color: #fff;
   position: relative;
@@ -9,7 +9,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   padding: 0;
-  margin: 1rem 0;
+  margin: 0 0 0.5rem 0;
 }
 .movie-section-container {
   display: flex;
@@ -32,7 +32,7 @@
   cursor: pointer;
 }
 .movie-section-left-arrow {
-  left: -18px;
+  left: -28px;
 }
 .movie-section-right-arrow {
   right: -28px;
@@ -47,7 +47,7 @@
   width: 200px;
   display: flex;
   flex-direction: column;
-  margin: 10px 10px;
+  margin: 10px 15px 0 0;
 }
 .movie-poster img {
   width: 100%;

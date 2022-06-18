@@ -2,8 +2,6 @@ import './MovieSection.css'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 
-const count = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-
 const MovieSection = ({ title, movieData }) => {
   console.log(movieData)
   return (

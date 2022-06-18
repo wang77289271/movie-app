@@ -18,6 +18,9 @@ const Home = () => {
         <Slider movieData={popular} />
       </div>
       <div className="main_section popular">
+        <MovieSection title={'Popular'} movieData={popular} />
+      </div>
+      <div className="main_section popular">
         <MovieSection title={'Top Rating'} movieData={topRating} />
       </div>
     </div>
