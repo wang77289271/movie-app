@@ -17,7 +17,7 @@ const Slider = (props) => {
   const prevSlider = () => {
     setCurrentSlider(currentSlider === 0 ? length - 1 : currentSlider - 1)
   }
-  console.log(currentSlider)
+  // console.log(currentSlider)
 
   if (!Array.isArray(movieData) || length <= 0) {
     return null

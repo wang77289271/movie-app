@@ -1,5 +1,5 @@
 .movie-section {
-  width: 92%;
+  width: 100%;
   margin: 50px auto;
   height: 100%;
   color: #fff;
@@ -12,9 +12,14 @@
   margin: 0 0 0.5rem 0;
 }
 .movie-section-container {
+  margin: 0 40px;
   display: flex;
   flex-direction: row;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.movie-section-container::-webkit-scrollbar {
+  display: none;
 }
 
 .movie-section-arrow {
@@ -32,10 +37,10 @@
   cursor: pointer;
 }
 .movie-section-left-arrow {
-  left: -28px;
+  left: 10px;
 }
 .movie-section-right-arrow {
-  right: -28px;
+  right: 10px;
 }
 
 /* Main Section */
