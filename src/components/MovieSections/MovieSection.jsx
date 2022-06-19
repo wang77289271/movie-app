@@ -68,6 +68,9 @@ const MovieSection = ({ title, movieData }) => {
                 alt={item.title}
               />
               <h2>{item.title}</h2>
+              <div className="movie-poster-detail">
+                <h1>{item.title}</h1>
+              </div>
             </div>
           ))}
         </div>
