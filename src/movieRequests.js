@@ -4,6 +4,7 @@ const base_URL = 'https://api.themoviedb.org/3'
 
 const movieRequests = {
   mostPopular: `${base_URL}/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`,
+  upComing: `${base_URL}/movie/upcoming?api_key=${API_KEY}&language=en-US`,
   topRating: `${base_URL}/movie/top_rated?api_key=${API_KEY}&language=en-US`,
   action: `${base_URL}/discover/movie?api_key=${API_KEY}&with_genres=28`,
   animation: `${base_URL}/discover/movie?api_key=${API_KEY}&with_genres=16`,
@@ -15,6 +16,7 @@ const movieRequests = {
 
 export default movieRequests
 
+// singleMovieDetails: `${base_URL}/movie/{movie_id}?api_key=${API_KEY}&language=en-US`
 // Get Reviews
 // https://api.themoviedb.org/3/movie/{movie_id}/reviews?api_key=<<api_key>>&language=en-US
 // Get Similar Movies

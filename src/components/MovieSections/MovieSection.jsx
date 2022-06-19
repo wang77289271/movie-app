@@ -69,7 +69,7 @@ const MovieSection = ({ title, movieData }) => {
               />
               <h2>{item.title}</h2>
               <div className="movie-poster-detail">
-                <h1>{item.title}</h1>
+                <h3>{item.title}</h3>
               </div>
             </div>
           ))}
