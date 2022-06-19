@@ -13,11 +13,11 @@ const MovieSection = ({ title, movieData }) => {
   const handleScroll = () => {
     let movieScroll_left = movieContainer.current.getBoundingClientRect().left
     let movieScroll_right = movieContainer.current.getBoundingClientRect().right
-    if (movieScroll_left < 40 && movieScroll_right > 1400) {
+    if (movieScroll_left < 40 && movieScroll_right > window.innerWidth - 40) {
       setLeftArrow('flex')
       setRightArrow('flex')
     }
-    if (movieScroll_left === 40 && movieScroll_right > 1400) {
+    if (movieScroll_left === 40 && movieScroll_right > window.innerWidth - 40) {
       setLeftArrow('none')
       setRightArrow('flex')
     }
