@@ -4,6 +4,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import StarIcon from '@mui/icons-material/Star'
 import { PlayArrow } from '@mui/icons-material'
+import { Link } from 'react-router-dom'
 
 const Slider = (props) => {
   const movieData = props.movieData
@@ -28,11 +29,10 @@ const Slider = (props) => {
         <ArrowBackIosIcon />
       </div>
       <div className="slider-wrapper">
-        {movieData.map((item, index) => {
-          return (
+        {movieData.map((item, index) => (
+          <Link to={`/movie/${item.id}`} key={item.id}>
             <div
               className={index === currentSlider ? 'slider active' : 'slider'}
-              key={item.id}
             >
               {index === currentSlider && (
                 <div className="movie-detail-container">
@@ -75,8 +75,8 @@ const Slider = (props) => {
                 </div>
               )}
             </div>
-          )
-        })}
+          </Link>
+        ))}
       </div>
       <div className="arrow arrow-right" onClick={nextSlider}>
         <ArrowForwardIosIcon />
