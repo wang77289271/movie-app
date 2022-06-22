@@ -2,6 +2,7 @@ import './MovieSection.css'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const MovieSection = ({ title, movieData }) => {
   const [leftArrow, setLeftArrow] = useState('none')
@@ -62,16 +63,18 @@ const MovieSection = ({ title, movieData }) => {
       >
         <div className="movie-section-main" ref={movieContainer}>
           {movieData.map((item) => (
-            <div className="movie-poster" key={item.id}>
-              <img
-                src={'https://image.tmdb.org/t/p/w1280/' + item.poster_path}
-                alt={item.title}
-              />
-              <h2>{item.title}</h2>
-              <div className="movie-poster-detail">
-                <h3>{item.title}</h3>
+            <Link to={`/movie/${item.id}`}>
+              <div className="movie-poster" key={item.id}>
+                <img
+                  src={'https://image.tmdb.org/t/p/w1280/' + item.poster_path}
+                  alt={item.title}
+                />
+                <h2>{item.title}</h2>
+                <div className="movie-poster-detail">
+                  <h3>{item.title}</h3>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
