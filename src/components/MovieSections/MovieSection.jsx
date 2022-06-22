@@ -63,8 +63,8 @@ const MovieSection = ({ title, movieData }) => {
       >
         <div className="movie-section-main" ref={movieContainer}>
           {movieData.map((item) => (
-            <Link to={`/movie/${item.id}`}>
-              <div className="movie-poster" key={item.id}>
+            <Link to={`/movie/${item.id}`} key={item.id}>
+              <div className="movie-poster">
                 <img
                   src={'https://image.tmdb.org/t/p/w1280/' + item.poster_path}
                   alt={item.title}

@@ -75,11 +75,11 @@ const Movie = () => {
               <span className="movie-sub-info-vl">|</span>
               <h4>{timeConvert(movieData.runtime)}</h4>
               <span className="movie-sub-info-vl">|</span>
-              <h4 className="movie-type">
-                {(movieData.genres ?? ['Movie type N/A']).map((item) => (
-                  <span>{item.name}</span>
+              <div className="movie-type">
+                {(movieData.genres ?? ['Movie type N/A']).map((item, index) => (
+                  <span key={index}>{item.name}</span>
                 ))}
-              </h4>
+              </div>
             </div>
             <p>{movieData.overview}</p>
           </div>
