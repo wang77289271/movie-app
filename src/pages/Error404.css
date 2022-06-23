@@ -1,0 +1,54 @@
+.errorpage_container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-image: linear-gradient(
+      rgba(75, 75, 75, 0.5),
+      rgba(75, 75, 75, 0.5)
+    ),
+    url('../images/txtBg_error404.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.oops h1 {
+  /* background-image: url('../images/txtBg_error404.jpg');
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  font-weight: 800;
+  font-size: 9rem;
+  margin: 0;
+  padding: 0;
+}
+
+.errorpage_content {
+  text-align: center;
+  width: 40%;
+}
+.errorpage_container h2 {
+  margin: 1rem 0;
+}
+.errorpage_container p {
+  margin: 0;
+}
+.errorpage_container button {
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: rgb(158, 53, 53);
+}
+.errorpage_container button:hover {
+  color: #000;
+  background-color: rgb(53, 158, 85);
+  transition: all 0.2s;
+}

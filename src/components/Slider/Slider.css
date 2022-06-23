@@ -115,13 +115,17 @@
   margin-top: 5px;
   color: rgb(208, 208, 208);
   cursor: pointer;
-  background-color: rgb(35, 169, 35);
+  background-color: rgb(8, 152, 8);
   border: none;
 
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+.info-container .des button:hover {
+  background-color: rgb(152, 126, 8);
+  transition: all 0.1s;
 }
 /* --------- Image Container --------- */
 .img-container {
