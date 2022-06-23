@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Slider.css'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
@@ -8,8 +8,25 @@ import { Link } from 'react-router-dom'
 
 const Slider = (props) => {
   const movieData = props.movieData
-  // slider
+
   const [currentSlider, setCurrentSlider] = useState(0)
+  const timeoutRef = useRef(null)
+
+  const resetTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+  }
+
+  console.log(timeoutRef.current)
+  useEffect(() => {
+    timeoutRef.current = setTimeout(() => {
+      nextSlider()
+    }, 2500)
+    return () => {
+      resetTimeout()
+    }
+  }, [currentSlider])
   const length = movieData.length
 
   const nextSlider = () => {
@@ -18,11 +35,11 @@ const Slider = (props) => {
   const prevSlider = () => {
     setCurrentSlider(currentSlider === 0 ? length - 1 : currentSlider - 1)
   }
-  // console.log(currentSlider)
 
   if (!Array.isArray(movieData) || length <= 0) {
     return null
   }
+
   return (
     <div className="slider-container">
       <div className="arrow arrow-left" onClick={prevSlider}>
