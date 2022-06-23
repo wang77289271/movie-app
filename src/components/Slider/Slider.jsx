@@ -18,14 +18,14 @@ const Slider = (props) => {
     }
   }
 
-  console.log(timeoutRef.current)
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
       nextSlider()
-    }, 2500)
+    }, 3500)
     return () => {
       resetTimeout()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSlider])
   const length = movieData.length
 

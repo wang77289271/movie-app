@@ -37,6 +37,7 @@ const Movie = () => {
   useEffect(() => {
     movie_info()
     movie_logo()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   console.log(movieLogo)

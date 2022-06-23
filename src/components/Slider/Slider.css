@@ -80,7 +80,7 @@
 }
 .rate-star,
 .rate-score {
-  color: rgb(93, 245, 93);
+  /* color: rgb(93, 245, 93); */
   margin-right: 5px;
   font-size: 1rem;
 }
@@ -104,6 +104,7 @@
   font-size: 0.9rem;
   margin: 1.5rem 0;
   padding: 0;
+  letter-spacing: 0.5px;
 }
 .info-container .des button {
   margin: 0;
