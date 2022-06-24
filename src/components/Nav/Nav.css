@@ -13,12 +13,15 @@
   flex: 1;
   margin-left: 10%;
 }
-.nav .logo h1 {
-  color: rgb(93, 245, 93);
+.nav .logo a {
+  color: rgb(88, 231, 88);
   font-size: 1.5rem;
   font-weight: 700;
+  text-decoration: none;
 }
-
+.nav .logo a:hover {
+  color: rgb(76, 205, 76);
+}
 .nav .search-container {
   flex: 1;
   margin-left: 15px;

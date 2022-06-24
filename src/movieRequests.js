@@ -12,15 +12,12 @@ const movieRequests = {
   drama: `${base_URL}/discover/movie?api_key=${API_KEY}&with_genres=18`,
   family: `${base_URL}/discover/movie?api_key=${API_KEY}&with_genres=10751`,
   fantasy: `${base_URL}/discover/movie?api_key=${API_KEY}&with_genres=14`,
+  search: `${base_URL}/search/movie?api_key=${API_KEY}&query=`,
 }
 
 export default movieRequests
 
-// singleMovieDetails: `${base_URL}/movie/{movie_id}?api_key=${API_KEY}&language=en-US`
 // Get Reviews
 // https://api.themoviedb.org/3/movie/{movie_id}/reviews?api_key=<<api_key>>&language=en-US
 // Get Similar Movies
 // https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=<<api_key>>&language=en-US
-
-// Get Movie List
-//https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US

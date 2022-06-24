@@ -9,7 +9,6 @@ const api_key = '6b690f808b61e26ca5ebd9f64d649517'
 
 const Movie = () => {
   const { id } = useParams()
-  console.log(id)
   const movie_info_url = `${movieDetail_base_URL}/${id}?api_key=${api_key}&language=en-US`
   const movie_logo_url = `${movieDetail_base_URL}/${id}/images?api_key=${api_key}`
 
@@ -40,22 +39,25 @@ const Movie = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  console.log(movieLogo)
-  console.log(movieData.genres)
-
   return (
     <div className="movie-container" key={id}>
       <Nav />
       <div
         className="movie-main"
         style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/original/${movieData.backdrop_path})`,
+          backgroundImage: movieData.backdrop_path
+            ? `url(https://image.tmdb.org/t/p/original/${movieData.backdrop_path})`
+            : '',
         }}
       >
         <div className="movie-main-info">
           <div className="movie-title-image">
             <img
-              src={`https://image.tmdb.org/t/p/original/${movieLogo.file_path}`}
+              src={
+                movieLogo.file_path
+                  ? `https://image.tmdb.org/t/p/original/${movieLogo.file_path}`
+                  : ''
+              }
               alt="title"
             />
           </div>

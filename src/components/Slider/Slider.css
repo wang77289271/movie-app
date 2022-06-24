@@ -106,6 +106,9 @@
   padding: 0;
   letter-spacing: 0.5px;
 }
+.info-container .des a {
+  text-decoration: none;
+}
 .info-container .des button {
   margin: 0;
   padding: 8px 15px;

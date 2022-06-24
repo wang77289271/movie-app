@@ -47,52 +47,49 @@ const Slider = (props) => {
       </div>
       <div className="slider-wrapper">
         {movieData.map((item, index) => (
-          <Link to={`/movie/${item.id}`} key={item.id}>
-            <div
-              className={index === currentSlider ? 'slider active' : 'slider'}
-            >
-              {index === currentSlider && (
-                <div className="movie-detail-container">
-                  <div className="info-container">
-                    <div className="title">
-                      <h1>{item.title}</h1>
-                    </div>
-                    <div className="rate-time">
-                      <h5>
-                        <span className="rate-star">
-                          <StarIcon
-                            style={{ fontSize: '1.2rem', marginTop: '4px' }}
-                          />
-                        </span>
-                        <span className="rate-score">{item.vote_average}</span>
-                        <span className="rate-vl">|</span>
-                        <span className="release-time">
-                          {item.release_date}
-                        </span>
-                        <span className="rate-vl">|</span>
-                        <span className="language">
-                          {item.original_language}
-                        </span>
-                      </h5>
-                    </div>
-                    <div className="des">
-                      <p>{item.overview}</p>
+          <div
+            className={index === currentSlider ? 'slider active' : 'slider'}
+            key={item.id}
+          >
+            {index === currentSlider && (
+              <div className="movie-detail-container">
+                <div className="info-container">
+                  <div className="title">
+                    <h1>{item.title}</h1>
+                  </div>
+                  <div className="rate-time">
+                    <h5>
+                      <span className="rate-star">
+                        <StarIcon
+                          style={{ fontSize: '1.2rem', marginTop: '4px' }}
+                        />
+                      </span>
+                      <span className="rate-score">{item.vote_average}</span>
+                      <span className="rate-vl">|</span>
+                      <span className="release-time">{item.release_date}</span>
+                      <span className="rate-vl">|</span>
+                      <span className="language">{item.original_language}</span>
+                    </h5>
+                  </div>
+                  <div className="des">
+                    <p>{item.overview}</p>
+                    <Link to={`/movie/${item.id}`}>
                       <button>
                         <span>View More</span>
                         <PlayArrow />
                       </button>
-                    </div>
+                    </Link>
                   </div>
-                  <div
-                    className="img-container"
-                    style={{
-                      backgroundImage: `url(https://image.tmdb.org/t/p/original${item.backdrop_path}`,
-                    }}
-                  ></div>
                 </div>
-              )}
-            </div>
-          </Link>
+                <div
+                  className="img-container"
+                  style={{
+                    backgroundImage: `url(https://image.tmdb.org/t/p/original${item.backdrop_path}`,
+                  }}
+                ></div>
+              </div>
+            )}
+          </div>
         ))}
       </div>
       <div className="arrow arrow-right" onClick={nextSlider}>
