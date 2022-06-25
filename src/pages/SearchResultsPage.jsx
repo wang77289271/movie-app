@@ -1,15 +1,14 @@
-import { useEffect } from 'react'
-import { useState } from 'react'
-import Nav from '../components/Nav/Nav'
+import { useContext } from 'react'
 import SearchResults from '../components/SearchResults/SearchResults'
+import { SearchResultsContext } from './../SearchResultsContext'
 
 const SearchResultsPage = () => {
-  const [searchData, setSearchData] = useState([])
-  const searchingDataHandler = (data) => {}
+  const data = useContext(SearchResultsContext)
+  console.log(data)
+
   return (
     <div className="searchResults_container">
-      <Nav searchingData={searchingDataHandler} />
-      <SearchResults searchData={'test'} />
+      <SearchResults />
     </div>
   )
 }

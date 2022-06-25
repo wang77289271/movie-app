@@ -1,6 +1,6 @@
 import Loading from '../components/Loading'
 import MovieSection from '../components/MovieSections/MovieSection'
-import Nav from '../components/Nav/Nav'
+// import Nav from '../components/Nav/Nav'
 import Slider from '../components/Slider/Slider'
 import movieRequests from '../movieRequests'
 import { useFetch } from '../useFetch'
@@ -27,70 +27,67 @@ const Home = () => {
   const fantasyLoading = useFetch(movieRequests.fantasy).loading
 
   return (
-    <div className="main">
-      <div className="main_nav">
-        <Nav />
-      </div>
-      <div className="main_slider">
+    <div className="home">
+      <div className="home_slider">
         {popularLoading ? <Loading /> : <Slider movieData={popular} />}
       </div>
-      <div className="main_section">
+      <div className="home_section">
         {topRatingLoading ? (
           <Loading />
         ) : (
           <MovieSection title={'Popular'} movieData={popular} />
         )}
       </div>
-      <div className="main_section">
+      <div className="home_section">
         {upComingLoading ? (
           <Loading />
         ) : (
           <MovieSection title={'Up Coming'} movieData={upComing} />
         )}
       </div>
-      <div className="main_section">
+      <div className="home_section">
         {topRatingLoading ? (
           <Loading />
         ) : (
           <MovieSection title={'Top Rating'} movieData={topRating} />
         )}
       </div>
-      <div className="main_section">
+      <div className="home_section">
         {actionLoading ? (
           <Loading />
         ) : (
           <MovieSection title={'Action'} movieData={action} />
         )}
       </div>
-      <div className="main_section">
+      <div className="home_section">
         {animationLoading ? (
           <Loading />
         ) : (
           <MovieSection title={'Animation'} movieData={animation} />
         )}
       </div>
-      <div className="main_section">
+      <div className="home_section">
         {comdyLoading ? (
           <Loading />
         ) : (
           <MovieSection title={'Comdy'} movieData={comdy} />
         )}
       </div>
-      <div className="main_section">
+      <div className="home_section">
         {dramaLoading ? (
           <Loading />
         ) : (
           <MovieSection title={'drama'} movieData={drama} />
         )}
       </div>
-      <div className="main_section">
+      <div className="home_section">
         {familyLoading ? (
           <Loading />
         ) : (
           <MovieSection title={'Family'} movieData={family} />
         )}
       </div>
-      <div className="main_section">
+      <div className="home_section">
         {fantasyLoading ? (
           <Loading />
         ) : (

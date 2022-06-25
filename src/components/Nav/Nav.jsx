@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Nav.css'
 import SearchIcon from '@mui/icons-material/Search'
 import movieRequests from '../../movieRequests'
@@ -22,8 +22,9 @@ const Nav = (props) => {
     setSearchItem('')
     navigate(`/search?results=${searchItem}`, { replace: true })
   }
-  props.searchingData(movieResult)
-  console.log(movieResult)
+  useEffect(() => {
+    props.searchingData(movieResult)
+  })
 
   return (
     <div className="nav">

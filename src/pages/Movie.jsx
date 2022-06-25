@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Nav from '../components/Nav/Nav'
+// import Nav from '../components/Nav/Nav'
 import './Movie.css'
 import { PlayArrow } from '@mui/icons-material'
 import { useParams } from 'react-router-dom'
@@ -41,7 +41,7 @@ const Movie = () => {
 
   return (
     <div className="movie-container" key={id}>
-      <Nav />
+      {/* <Nav /> */}
       <div
         className="movie-main"
         style={{
