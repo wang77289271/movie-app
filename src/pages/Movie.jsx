@@ -63,11 +63,13 @@ const Movie = () => {
           <div className="movie-title-image">
             <img
               src={
-                movieLogo.file_path
-                  ? `https://image.tmdb.org/t/p/original/${movieLogo.file_path}`
-                  : ''
+                movieLogo === null ||
+                movieLogo === [] ||
+                movieLogo === undefined
+                  ? ''
+                  : `https://image.tmdb.org/t/p/original/${movieLogo.file_path}`
               }
-              alt="title"
+              alt={movieData.title}
             />
           </div>
           <div className="movie-info-content">
