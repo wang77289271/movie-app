@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import NoResultsFound from '../components/SearchResults/NoResultsFound'
 import SearchResults from '../components/SearchResults/SearchResults'
 import { SearchResultsContext } from './../SearchResultsContext'
 import './SearchResultsPage.css'
@@ -22,9 +23,8 @@ const SearchResultsPage = () => {
           <SearchResults searchResults={searchResultsData} />
         </div>
       ) : (
-        <div>
-          <h1 style={{ color: '#fff' }}>No result found</h1>
-          {/* Popular movies */}
+        <div className="search_result_content">
+          <NoResultsFound />
         </div>
       )}
     </div>

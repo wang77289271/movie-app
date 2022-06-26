@@ -3,7 +3,7 @@ import StarIcon from '@mui/icons-material/Star'
 import './SearchResults.css'
 import { Link } from 'react-router-dom'
 
-const movie_poster_base_url = 'https://image.tmdb.org/t/p/w1280/'
+const movie_poster_base_url = 'https://image.tmdb.org/t/p/w1280'
 
 const SearchResults = (props) => {
   const searchData = props.searchResults.results
