@@ -5,11 +5,16 @@ import { SearchResultsContext } from './../SearchResultsContext'
 
 const Main = () => {
   const [searchData, setSearchData] = useState('')
+  const [searchItem, setSearchItem] = useState('')
+  const search_all = { searchData, searchItem }
 
   return (
     <div id="main">
-      <Nav searchingData={(d) => setSearchData(d)} />
-      <SearchResultsContext.Provider value={searchData}>
+      <Nav
+        searchingData={(data) => setSearchData(data)}
+        searchingItem={(data) => setSearchItem(data)}
+      />
+      <SearchResultsContext.Provider value={search_all}>
         <Outlet />
       </SearchResultsContext.Provider>
     </div>

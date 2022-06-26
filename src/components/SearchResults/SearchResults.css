@@ -1,0 +1,67 @@
+.search_result {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(17, 19, 25);
+}
+.search_result_item {
+  width: 500px;
+  margin: 1rem auto 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+.search_result_item_poster {
+  flex: 2;
+}
+.search_result_item_poster img {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.search_result_item_info {
+  flex: 3;
+  padding: 0;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.search_result_item_info h2 {
+  padding: 0;
+  margin: 10px 0 0 0;
+  font-size: 1.3rem;
+  letter-spacing: 0.2px;
+}
+.search_result_item_info h3 {
+  padding: 0;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.6px;
+  color: rgb(163, 163, 163);
+}
+.search_result_item_info h4 {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.search_result_item_info_btn {
+  margin-bottom: 15px;
+}
+.search_result_item_info_btn button {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: rgb(8, 152, 8);
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.search_result_item_info_btn button:hover {
+  background-color: rgb(152, 126, 8);
+  transition: all 0.1s;
+}

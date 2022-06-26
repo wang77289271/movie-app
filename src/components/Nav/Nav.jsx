@@ -12,15 +12,19 @@ const Nav = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (searchItem) {
+    if (searchItem.trim().length > 0) {
       fetch(search_url + searchItem)
         .then((res) => res.json())
         .then((data) => {
           setMovieResult(data)
         })
+      props.searchingItem(searchItem)
+      setSearchItem('')
+      navigate(`/search?results=${searchItem}`, { replace: true })
     }
-    setSearchItem('')
-    navigate(`/search?results=${searchItem}`, { replace: true })
+    if (searchItem.trim().length === 0) {
+      return
+    }
   }
   useEffect(() => {
     props.searchingData(movieResult)

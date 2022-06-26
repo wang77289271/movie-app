@@ -23,12 +23,12 @@
 }
 
 .movie-section-arrow {
-  width: 50px;
+  /* width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: white;
-  color: #000;
-  opacity: 0.2;
+  background-color: white; */
+  color: #fff;
+  opacity: 0.5;
   position: absolute;
   top: 3rem;
   bottom: 0;
@@ -42,6 +42,7 @@
 }
 .movie-section-arrow:hover {
   opacity: 1;
+  color: rgb(38, 211, 38);
   transition: all 0.3s;
 }
 .movie-section-left-arrow {
