@@ -8,7 +8,6 @@ const movie_poster_base_url = 'https://image.tmdb.org/t/p/w1280'
 
 const NoResultsFound = () => {
   const popular = useFetch(movieRequests.mostPopular).movies
-  console.log(popular)
   return (
     <div className="noresult_popular">
       <h1>Popular Movies</h1>

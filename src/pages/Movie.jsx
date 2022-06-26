@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import './Movie.css'
 import { PlayArrow } from '@mui/icons-material'
 import { useParams } from 'react-router-dom'
+import SimilarMovies from '../components/SimilarMovies/SimilarMovies'
 
 const movieDetail_base_URL = 'https://api.themoviedb.org/3/movie'
 const api_key = '6b690f808b61e26ca5ebd9f64d649517'
@@ -11,9 +12,11 @@ const Movie = () => {
   const { id } = useParams()
   const movie_info_url = `${movieDetail_base_URL}/${id}?api_key=${api_key}&language=en-US`
   const movie_logo_url = `${movieDetail_base_URL}/${id}/images?api_key=${api_key}`
+  const similar_movie_url = `${movieDetail_base_URL}/${id}/similar?api_key=${api_key}`
 
   const [movieData, setMovieData] = useState('')
   const [movieLogo, setMovieLogo] = useState('')
+  const [similarMovies, setSimilarMovies] = useState('')
   const movie_info = async () => {
     const response = await fetch(movie_info_url)
     const data = await response.json()
@@ -23,6 +26,11 @@ const Movie = () => {
     const response = await fetch(movie_logo_url)
     const data = await response.json()
     setMovieLogo(data.logos[0])
+  }
+  const movie_similar = async () => {
+    const response = await fetch(similar_movie_url)
+    const data = await response.json()
+    setSimilarMovies(data)
   }
 
   const timeConvert = (n) => {
@@ -36,6 +44,7 @@ const Movie = () => {
   useEffect(() => {
     movie_info()
     movie_logo()
+    movie_similar()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -86,8 +95,10 @@ const Movie = () => {
             </div>
             <p>{movieData.overview}</p>
           </div>
-          <div className="similar-movies"></div>
         </div>
+      </div>
+      <div className="similar-movies">
+        <SimilarMovies similarMovies={similarMovies.results} />
       </div>
     </div>
   )
