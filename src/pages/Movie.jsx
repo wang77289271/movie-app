@@ -4,6 +4,7 @@ import './Movie.css'
 import { PlayArrow } from '@mui/icons-material'
 import { useParams } from 'react-router-dom'
 import SimilarMovies from '../components/SimilarMovies/SimilarMovies'
+import MovieReviews from '../components/MovieReviews/MovieReviews'
 
 const movieDetail_base_URL = 'https://api.themoviedb.org/3/movie'
 const api_key = '6b690f808b61e26ca5ebd9f64d649517'
@@ -13,10 +14,12 @@ const Movie = () => {
   const movie_info_url = `${movieDetail_base_URL}/${id}?api_key=${api_key}&language=en-US`
   const movie_logo_url = `${movieDetail_base_URL}/${id}/images?api_key=${api_key}`
   const similar_movie_url = `${movieDetail_base_URL}/${id}/similar?api_key=${api_key}`
+  const movie_review_url = `${movieDetail_base_URL}/${id}/reviews?api_key=${api_key}&language=en-US`
 
   const [movieData, setMovieData] = useState('')
   const [movieLogo, setMovieLogo] = useState('')
   const [similarMovies, setSimilarMovies] = useState('')
+  const [movieReviews, setMovieReviews] = useState('')
   const movie_info = async () => {
     const response = await fetch(movie_info_url)
     const data = await response.json()
@@ -32,6 +35,11 @@ const Movie = () => {
     const data = await response.json()
     setSimilarMovies(data)
   }
+  const movie_reviews = async () => {
+    const response = await fetch(movie_review_url)
+    const data = await response.json()
+    setMovieReviews(data)
+  }
 
   const timeConvert = (n) => {
     let num = n
@@ -45,6 +53,7 @@ const Movie = () => {
     movie_info()
     movie_logo()
     movie_similar()
+    movie_reviews()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -100,6 +109,7 @@ const Movie = () => {
         </div>
       </div>
       <div className="similar-movies">
+        <MovieReviews movieReviews={movieReviews} />
         <SimilarMovies similarMovies={similarMovies.results} />
       </div>
     </div>

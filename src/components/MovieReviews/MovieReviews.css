@@ -1,0 +1,46 @@
+.movie_reviews {
+  width: 100%;
+  background-color: rgb(26, 26, 38);
+  padding: 2rem 0;
+}
+.movie_review_container {
+  width: 90%;
+  margin: auto;
+}
+.movie_review_container h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 2rem 0 1rem 0;
+  padding: 0;
+}
+
+.movie_review_author {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+.movie_review_author h2 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-style: italic;
+  margin: 1px 0 0 8px;
+  color: rgb(150, 150, 150);
+}
+.movie_review_author h2 span {
+  font-weight: 500;
+  color: rgb(200, 200, 200);
+}
+.movie_review_comment p {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  color: rgb(227, 227, 227);
+  /* margin-bottom: 2rem; */
+}
+.movie_review_container hr {
+  height: 1px;
+  border: none;
+  background-color: rgb(94, 94, 94);
+  margin: 2rem 0;
+}
