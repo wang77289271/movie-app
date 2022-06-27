@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import Nav from '../components/Nav/Nav'
 import { SearchResultsContext } from './../SearchResultsContext'
+import Footer from './../components/Footer/Footer'
 
 const Main = () => {
   const [searchData, setSearchData] = useState('')
@@ -17,6 +18,7 @@ const Main = () => {
       <SearchResultsContext.Provider value={search_all}>
         <Outlet />
       </SearchResultsContext.Provider>
+      <Footer />
     </div>
   )
 }

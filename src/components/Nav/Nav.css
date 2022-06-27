@@ -15,9 +15,10 @@
 }
 .nav .logo a {
   color: rgb(88, 231, 88);
-  font-size: 1.5rem;
+  font-size: 2.3rem;
   font-weight: 700;
   text-decoration: none;
+  font-family: 'Permanent Marker', cursive;
 }
 .nav .logo a:hover {
   color: rgb(76, 205, 76);
