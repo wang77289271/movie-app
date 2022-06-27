@@ -66,7 +66,13 @@ const MovieSection = ({ title, movieData }) => {
             <Link to={`/movie/${item.id}`} key={item.id}>
               <div className="movie-poster">
                 <img
-                  src={'https://image.tmdb.org/t/p/w1280/' + item.poster_path}
+                  src={
+                    item.poster_path === null ||
+                    item.poster_path === [] ||
+                    item.poster_path === undefined
+                      ? ''
+                      : 'https://image.tmdb.org/t/p/w1280/' + item.poster_path
+                  }
                   alt={item.title}
                 />
                 <h2>{item.title}</h2>

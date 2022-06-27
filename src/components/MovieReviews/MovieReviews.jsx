@@ -13,7 +13,9 @@ const MovieReviews = ({ movieReviews }) => {
         <hr />
         {movieReviews.results === null ||
         movieReviews.results === [] ||
-        movieReviews.results === undefined ? (
+        movieReviews.results === undefined ||
+        movieReviews === undefined ||
+        movieReviews.results.length === 0 ? (
           <h1
             style={{
               color: 'rgb(150, 150, 150)',

@@ -25,7 +25,6 @@ const SimilarMovies = ({ similarMovies }) => {
         {similarMovies.slice(0, 12).map((item) => {
           return (
             <div className="similar_movies_item" key={item.id}>
-              {/* <Link to={`/movie/${item.id}`}> */}
               <img
                 src={item.poster_path ? movie_image_url + item.poster_path : ''}
                 alt="title"
@@ -33,7 +32,6 @@ const SimilarMovies = ({ similarMovies }) => {
                   handleOnClick(item.id)
                 }}
               />
-              {/* </Link> */}
             </div>
           )
         })}
