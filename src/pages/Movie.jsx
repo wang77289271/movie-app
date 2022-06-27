@@ -5,6 +5,7 @@ import { PlayArrow } from '@mui/icons-material'
 import { useParams } from 'react-router-dom'
 import SimilarMovies from '../components/SimilarMovies/SimilarMovies'
 import MovieReviews from '../components/MovieReviews/MovieReviews'
+import Trailar from '../components/Trailar/Trailar'
 
 const movieDetail_base_URL = 'https://api.themoviedb.org/3/movie'
 const api_key = '6b690f808b61e26ca5ebd9f64d649517'
@@ -15,11 +16,14 @@ const Movie = () => {
   const movie_logo_url = `${movieDetail_base_URL}/${id}/images?api_key=${api_key}`
   const similar_movie_url = `${movieDetail_base_URL}/${id}/similar?api_key=${api_key}`
   const movie_review_url = `${movieDetail_base_URL}/${id}/reviews?api_key=${api_key}&language=en-US`
+  const movie_trailar_url = `${movieDetail_base_URL}/${id}/videos?api_key=${api_key}&language=en-US`
 
   const [movieData, setMovieData] = useState('')
   const [movieLogo, setMovieLogo] = useState('')
   const [similarMovies, setSimilarMovies] = useState('')
   const [movieReviews, setMovieReviews] = useState('')
+  const [movieTrailar, setMovieTrailar] = useState('')
+
   const movie_info = async () => {
     const response = await fetch(movie_info_url)
     const data = await response.json()
@@ -40,6 +44,11 @@ const Movie = () => {
     const data = await response.json()
     setMovieReviews(data)
   }
+  const movie_trailar = async () => {
+    const response = await fetch(movie_trailar_url)
+    const data = await response.json()
+    setMovieTrailar(data.results[0])
+  }
 
   const timeConvert = (n) => {
     let num = n
@@ -54,12 +63,24 @@ const Movie = () => {
     movie_logo()
     movie_similar()
     movie_reviews()
+    movie_trailar()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const [displayTrailar, setDisplayTrailar] = useState('none')
+  const handleOnClickTrailar = () => {
+    setDisplayTrailar('block')
+  }
   return (
     <div className="movie-container" key={id}>
       {/* <Nav /> */}
+      <div className="trailar_container" style={{ display: displayTrailar }}>
+        <Trailar
+          displayTrailar={(d) => setDisplayTrailar(d)}
+          movieTrailar={movieTrailar}
+        />
+      </div>
+
       <div
         className="movie-main"
         style={{
@@ -83,11 +104,17 @@ const Movie = () => {
           </div>
           <div className="movie-info-content">
             <div className="movie-play-button">
-              <button className="btn-singleMovie btn-movie-play">
+              <button
+                className="btn-singleMovie btn-movie-play"
+                onClick={() => handleOnClickTrailar()}
+              >
                 <span>Play</span>
                 <PlayArrow style={{ fontSize: '1.7rem' }} />
               </button>
-              <button className="btn-singleMovie btn-movie-trailar">
+              <button
+                className="btn-singleMovie btn-movie-trailar"
+                onClick={() => handleOnClickTrailar()}
+              >
                 <span>Trailar</span>
                 <PlayArrow style={{ fontSize: '1.7rem' }} />
               </button>
