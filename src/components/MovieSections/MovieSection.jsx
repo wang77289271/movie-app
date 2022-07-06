@@ -41,6 +41,9 @@ const MovieSection = ({ title, movieData }) => {
       })
     }
   }
+  const handleOnClickSingleMovie = () => {
+    window.scrollTo(0, 0)
+  }
 
   return (
     <div className="movie-section">
@@ -63,7 +66,11 @@ const MovieSection = ({ title, movieData }) => {
       >
         <div className="movie-section-main" ref={movieContainer}>
           {movieData.map((item) => (
-            <Link to={`/movie/${item.id}`} key={item.id}>
+            <Link
+              to={`/movie/${item.id}`}
+              key={item.id}
+              onClick={handleOnClickSingleMovie}
+            >
               <div className="movie-poster">
                 <img
                   src={

@@ -1,15 +1,16 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'
 import './SimilarMovies.css'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const movie_image_url = 'https://image.tmdb.org/t/p/original'
 
 const SimilarMovies = ({ similarMovies }) => {
-  const navigate = useNavigate()
-  const handleOnClick = (id) => {
-    navigate(`/movie/${id}`, { replace: true })
-    window.location.reload()
+  const handleOnClick = () => {
+    setTimeout(() => {
+      window.location.reload()
+      window.scrollTo(0, 0)
+    })
   }
   if (
     similarMovies === null ||
@@ -25,13 +26,17 @@ const SimilarMovies = ({ similarMovies }) => {
         {similarMovies.slice(0, 12).map((item) => {
           return (
             <div className="similar_movies_item" key={item.id}>
-              <img
-                src={item.poster_path ? movie_image_url + item.poster_path : ''}
-                alt="title"
-                onClick={() => {
-                  handleOnClick(item.id)
-                }}
-              />
+              <Link to={`/movie/${item.id}`}>
+                <img
+                  src={
+                    item.poster_path ? movie_image_url + item.poster_path : ''
+                  }
+                  alt="title"
+                  onClick={() => {
+                    handleOnClick(item.id)
+                  }}
+                />
+              </Link>
             </div>
           )
         })}
