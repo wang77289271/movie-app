@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 // import Nav from '../components/Nav/Nav'
 import './Movie.css'
 import { PlayArrow } from '@mui/icons-material'
@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import SimilarMovies from '../components/SimilarMovies/SimilarMovies'
 import MovieReviews from '../components/MovieReviews/MovieReviews'
 import Trailar from '../components/Trailar/Trailar'
+import { useFetchSingleMovie } from '../useFetchSingleMovie'
 
 const movieDetail_base_URL = 'https://api.themoviedb.org/3/movie'
 const api_key = '6b690f808b61e26ca5ebd9f64d649517'
@@ -18,37 +19,32 @@ const Movie = () => {
   const movie_review_url = `${movieDetail_base_URL}/${id}/reviews?api_key=${api_key}&language=en-US`
   const movie_trailar_url = `${movieDetail_base_URL}/${id}/videos?api_key=${api_key}&language=en-US`
 
-  const [movieData, setMovieData] = useState('')
   const [movieLogo, setMovieLogo] = useState('')
-  const [similarMovies, setSimilarMovies] = useState('')
-  const [movieReviews, setMovieReviews] = useState('')
   const [movieTrailar, setMovieTrailar] = useState('')
 
-  const movie_info = async () => {
-    const response = await fetch(movie_info_url)
-    const data = await response.json()
-    setMovieData(data)
-  }
-  const movie_logo = async () => {
+  const movieData = useFetchSingleMovie(movie_info_url).movies
+  const similarMovies = useFetchSingleMovie(similar_movie_url).movies
+  const movieReviews = useFetchSingleMovie(movie_review_url).movies
+
+  const movie_logo = useCallback(async () => {
     const response = await fetch(movie_logo_url)
     const data = await response.json()
     setMovieLogo(data.logos[0])
-  }
-  const movie_similar = async () => {
-    const response = await fetch(similar_movie_url)
-    const data = await response.json()
-    setSimilarMovies(data)
-  }
-  const movie_reviews = async () => {
-    const response = await fetch(movie_review_url)
-    const data = await response.json()
-    setMovieReviews(data)
-  }
-  const movie_trailar = async () => {
+  }, [movie_logo_url])
+
+  const movie_trailar = useCallback(async () => {
     const response = await fetch(movie_trailar_url)
     const data = await response.json()
     setMovieTrailar(data.results[0])
-  }
+  }, [movie_trailar_url])
+
+  useEffect(() => {
+    movie_trailar()
+  }, [movie_trailar])
+
+  useEffect(() => {
+    movie_logo()
+  }, [movie_logo])
 
   const timeConvert = (n) => {
     let num = n
@@ -57,15 +53,6 @@ const Movie = () => {
     let runtime = `${hours}h ${min}m`
     return runtime
   }
-
-  useEffect(() => {
-    movie_info()
-    movie_logo()
-    movie_similar()
-    movie_reviews()
-    movie_trailar()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   const [displayTrailar, setDisplayTrailar] = useState('none')
   const handleOnClickTrailar = () => {
