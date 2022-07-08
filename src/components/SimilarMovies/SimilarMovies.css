@@ -15,9 +15,18 @@
   gap: 1rem;
 }
 
+.similar_movies_item {
+  width: 100%;
+  overflow: hidden;
+}
+
 .similar_movies_item img {
   width: 100%;
   cursor: pointer;
+}
+.similar_movies_item img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
 }
 
 @media only screen and (max-width: 1000px) {

@@ -63,6 +63,7 @@ const Movie = () => {
       {/* <Nav /> */}
       <div className="trailar_container" style={{ display: displayTrailar }}>
         <Trailar
+          trailarOnOff={displayTrailar}
           displayTrailar={(d) => setDisplayTrailar(d)}
           movieTrailar={movieTrailar}
         />

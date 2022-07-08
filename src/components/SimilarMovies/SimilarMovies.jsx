@@ -31,7 +31,7 @@ const SimilarMovies = ({ similarMovies }) => {
                   src={
                     item.poster_path ? movie_image_url + item.poster_path : ''
                   }
-                  alt="title"
+                  alt={item.title}
                   onClick={() => {
                     handleOnClick(item.id)
                   }}

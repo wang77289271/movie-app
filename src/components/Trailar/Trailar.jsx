@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './Trailar.css'
 
-const Trailar = ({ displayTrailar, movieTrailar }) => {
+const Trailar = ({ displayTrailar, movieTrailar, trailarOnOff }) => {
   const handleOnclick = () => {
     displayTrailar('none')
   }
@@ -29,7 +29,11 @@ const Trailar = ({ displayTrailar, movieTrailar }) => {
       {movieTrailar ? (
         <iframe
           key={movieTrailar.id}
-          src={'https://www.youtube.com/embed/' + movieTrailar.key}
+          src={
+            trailarOnOff === 'block'
+              ? 'https://www.youtube.com/embed/' + movieTrailar.key
+              : ''
+          }
           title={movieTrailar.name}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
