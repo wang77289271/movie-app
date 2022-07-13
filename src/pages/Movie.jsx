@@ -60,7 +60,6 @@ const Movie = () => {
   }
   return (
     <div className="movie-container" key={id}>
-      {/* <Nav /> */}
       <div className="trailar_container" style={{ display: displayTrailar }}>
         <Trailar
           trailarOnOff={displayTrailar}
