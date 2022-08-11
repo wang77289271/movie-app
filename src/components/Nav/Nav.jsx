@@ -31,7 +31,7 @@ const Nav = (props) => {
   })
 
   return (
-    <div className="nav">
+    <div className="nav" id="nav">
       <div className="logo">
         <Link to={'/'}>yMovie</Link>
       </div>

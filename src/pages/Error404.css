@@ -10,7 +10,7 @@
       rgba(75, 75, 75, 0.5),
       rgba(75, 75, 75, 0.5)
     ),
-    url('../images/txtBg_error404.jpg');
+    url('../assets/txtBg_error404.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }

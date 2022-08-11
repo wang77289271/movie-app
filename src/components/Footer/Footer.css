@@ -12,6 +12,17 @@
   width: 70%;
   height: 100%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer_logo {
+  width: 50px;
+  margin-top: 3rem;
+}
+.footer_logo img {
+  width: 100%;
 }
 .footer_content h1 {
   font-family: 'Permanent Marker', cursive;
@@ -35,4 +46,23 @@
   /* font-family: 'Roboto', sans-serif; */
   font-weight: 300;
   letter-spacing: 2px;
+}
+.footer_copyright {
+  width: 80%;
+  margin: auto;
+}
+.footer_copyright hr {
+  width: 50%;
+  border: none;
+  background-color: rgb(179, 179, 179, 0.5);
+  height: 1px;
+  margin-top: 20px;
+}
+.footer_copyright h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: rgb(179, 179, 179);
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 20px 0;
 }
